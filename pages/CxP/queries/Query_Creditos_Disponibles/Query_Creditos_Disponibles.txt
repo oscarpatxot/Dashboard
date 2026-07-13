@@ -1,0 +1,17 @@
+SELECT
+    codigo_iso,
+    SUM(credito_disponible) AS credito_disponible
+FROM vw_resumen_creditos_suplidores
+WHERE
+    id_proyecto = {{ Number(Seleccionar_Proyecto.selectedOptionValue) }}
+
+    AND (
+        {{Seleccionar_Suplidor.selectedOptionValue}} IS NULL
+        OR id_suplidor = {{ Number(Seleccionar_Suplidor.selectedOptionValue) }}
+    )
+
+GROUP BY
+    codigo_iso
+
+ORDER BY
+    codigo_iso

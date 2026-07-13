@@ -1,0 +1,16 @@
+SELECT *
+FROM vw_ordenes_en_avance
+WHERE 
+  id_proyecto = {{ Number(DD_Proyecto_Av.selectedOptionValue) }}
+
+  AND (
+    {{ DD_Suplidor_Av.selectedOptionValue }} IS NULL
+    OR id_suplidor = {{ Number(DD_Suplidor_Av.selectedOptionValue) }}
+  )
+
+  AND (
+    {{ DD_Moneda_Av.selectedOptionValue }} IS NULL
+    OR id_moneda = {{ Number(DD_Moneda_Av.selectedOptionValue) }}
+  )
+
+ORDER BY fecha_orden DESC

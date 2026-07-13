@@ -1,0 +1,46 @@
+SELECT
+
+    id_factura_compra,
+
+    numero_factura,
+
+    fecha_factura,
+
+    dias_factura AS dias,
+
+    ncf,
+
+    codigo_seguridad,
+
+    id_suplidor,
+
+    razon_social,
+
+    id_proyecto,
+
+    nombre_proyecto,
+
+    id_moneda,
+
+    codigo_iso,
+
+    monto_total,
+
+    (
+    ISNULL(monto_neto_pagado, 0)
+    +
+    ISNULL(monto_avanzado, 0)
+    +
+    ISNULL(notas_credito_aplicadas, 0)
+) AS total_abonado,
+
+    balance
+
+FROM vw_cuentas_por_pagar_intercompany
+
+WHERE
+    id_proyecto = {{ Number(DD_Proyecto_IC.selectedOptionValue) }}
+
+    AND id_moneda = {{ Number(DD_Moneda_IC.selectedOptionValue) }}
+
+ORDER BY balance DESC

@@ -1,0 +1,12 @@
+SELECT COUNT(*) AS total_facturas
+FROM vw_cuentas_por_pagar
+WHERE 
+  id_proyecto = {{ Number(Seleccionar_Proyecto.selectedOptionValue) }}
+
+  {{Seleccionar_Suplidor.selectedOptionValue 
+    ? "AND id_suplidor = " + Number(Seleccionar_Suplidor.selectedOptionValue)
+    : ""}}
+
+  {{Seleccionar_Moneda.selectedOptionValue 
+    ? "AND id_moneda = " + Number(Seleccionar_Moneda.selectedOptionValue)
+    : ""}}

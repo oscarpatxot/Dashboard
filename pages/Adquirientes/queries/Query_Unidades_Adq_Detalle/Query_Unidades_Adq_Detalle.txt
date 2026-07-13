@@ -1,0 +1,16 @@
+SELECT 
+  id_unidad,
+  MAX(nombre_unidad) AS nombre_unidad,
+  MAX(nombre_adquiriente) AS nombre_adquiriente,
+  MAX(orden_en_proyecto) AS orden_en_proyecto,
+
+  -- 👇 campo para mostrar
+  MAX(nombre_unidad) + ' - ' + MAX(nombre_adquiriente) AS unidad_cliente
+
+FROM vw_adq_pagos_global
+WHERE 
+  id_proyecto = {{ Number(DD_Proyecto_Adq.selectedOptionValue) }}
+  AND estado IN ('ACTIVO', 'SALDADO')   -- 👈 importante
+
+GROUP BY id_unidad
+ORDER BY orden_en_proyecto

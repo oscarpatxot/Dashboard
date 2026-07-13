@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 23,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "ITALIC",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "rp04vx2ou1",
+  "leftColumn": 4,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 29,
+  "mobileLeftColumn": 39,
+  "mobileRightColumn": 55,
+  "mobileTopRow": 25,
+  "needsErrorInfo": false,
+  "originalBottomRow": 25,
+  "originalTopRow": 20,
+  "overflow": "NONE",
+  "parentColumnSpace": 19.62109375,
+  "parentId": "abfqcy0iuj",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 24,
+  "shouldTruncate": false,
+  "text": "{{\n\"Créditos Disponibles: \" +\nQuery_Creditos_Disponibles.data\n  .map(x =>\n    x.codigo_iso +\n    \" \" +\n    Number(x.credito_disponible || 0)\n      .toLocaleString(\"en-US\", {\n        minimumFractionDigits: 2\n      })\n  )\n  .join(\" | \")\n}}",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 19,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "d4jzzjqecf",
+  "widgetName": "Text2"
+}

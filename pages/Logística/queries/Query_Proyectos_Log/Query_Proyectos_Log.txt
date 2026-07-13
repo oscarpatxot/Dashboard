@@ -1,0 +1,3 @@
+SELECT DISTINCT id_proyecto, nombre_proyecto
+FROM documentos_logistica
+ORDER BY nombre_proyecto

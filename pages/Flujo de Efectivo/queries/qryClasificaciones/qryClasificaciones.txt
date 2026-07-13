@@ -1,0 +1,6 @@
+SELECT DISTINCT
+    clasificacion_financiera
+FROM categorias_movimientos_bancarios
+WHERE clasificacion_financiera IS NOT NULL
+AND clasificacion_financiera <> 'INTERNO'
+ORDER BY clasificacion_financiera desc

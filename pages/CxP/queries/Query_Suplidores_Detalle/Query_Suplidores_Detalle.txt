@@ -1,0 +1,4 @@
+SELECT DISTINCT id_suplidor, razon_social
+FROM vw_cuentas_por_pagar
+WHERE id_proyecto = {{ Number(Seleccionar_Proyecto.selectedOptionValue) }}
+ORDER BY razon_social

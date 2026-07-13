@@ -1,0 +1,45 @@
+SELECT 
+    id,
+    nombre_proyecto,
+    numero_documento,
+    fecha_envio_documento,
+
+    (
+        DATEDIFF(DAY, fecha_envio_documento, GETDATE())
+        - (DATEDIFF(WEEK, fecha_envio_documento, GETDATE()) * 2)
+        - CASE 
+            WHEN DATENAME(WEEKDAY, fecha_envio_documento) = 'Sunday' THEN 1
+            ELSE 0
+          END
+        - CASE 
+            WHEN DATENAME(WEEKDAY, GETDATE()) = 'Saturday' THEN 1
+            ELSE 0
+          END
+    ) AS dias_lab,
+
+    razon_social,
+    codigo_iso,
+    monto,
+    referencia,
+    comentarios,
+
+    CASE 
+        WHEN pagado = 1 THEN 'Si'
+        ELSE 'No'
+    END AS pagado,
+
+    CASE 
+        WHEN entregado = 1 THEN 'Si'
+        ELSE 'No'
+    END AS entregado
+
+FROM documentos_logistica
+
+WHERE 
+    id_proyecto = {{ Number(DD_Proyecto_Log.selectedOptionValue) }}
+
+    AND pagado = 0
+
+    AND fecha_envio_documento IS NOT NULL
+
+ORDER BY fecha_envio_documento

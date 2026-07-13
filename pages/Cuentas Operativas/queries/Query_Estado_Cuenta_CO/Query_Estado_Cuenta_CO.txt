@@ -1,0 +1,4 @@
+EXEC sp_estado_cuenta_bancario
+    @id_cuenta_operativa = {{ Number(DD_Cuenta_CO.selectedOptionValue) }},
+    @fecha_inicio = '{{ moment(DP_Inicio_CO.selectedDate).format("YYYY-MM-DD") }}',
+    @fecha_fin = '{{ moment(DP_Fin_CO.selectedDate).format("YYYY-MM-DD") }}'

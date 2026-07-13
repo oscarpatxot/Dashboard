@@ -1,0 +1,38 @@
+{
+  "appIsExample": false,
+  "applicationVersion": 2,
+  "collapseInvisibleWidgets": true,
+  "color": "#C7F3E3",
+  "evaluationVersion": 2,
+  "icon": "bar-graph",
+  "pages": [
+    {
+      "id": "CxP",
+      "isDefault": false
+    },
+    {
+      "id": "Adquirientes",
+      "isDefault": true
+    },
+    {
+      "id": "Avances Contratistas",
+      "isDefault": false
+    },
+    {
+      "id": "Logística",
+      "isDefault": false
+    },
+    {
+      "id": "Cuentas Operativas",
+      "isDefault": false
+    },
+    {
+      "id": "Flujo de Efectivo",
+      "isDefault": false
+    },
+    {
+      "id": "Intercompañía",
+      "isDefault": false
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+SELECT
+    id_moneda,
+    codigo_iso
+FROM
+(
+    SELECT DISTINCT
+        id_moneda,
+        codigo_iso,
+
+        CASE
+            WHEN codigo_iso = 'DOP' THEN 1
+            WHEN codigo_iso = 'USD' THEN 2
+            ELSE 3
+        END AS orden_moneda
+
+    FROM vw_cuentas_por_pagar_intercompany
+
+    WHERE
+        id_proyecto = {{ Number(DD_Proyecto_IC.selectedOptionValue) }}
+
+) x
+
+ORDER BY orden_moneda

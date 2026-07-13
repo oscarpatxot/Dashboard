@@ -1,0 +1,4 @@
+SELECT DISTINCT id_suplidor, razon_social
+FROM vw_ordenes_en_avance
+WHERE id_proyecto = {{ Number(DD_Proyecto_Av.selectedOptionValue) }}
+ORDER BY razon_social

@@ -1,0 +1,8 @@
+SELECT
+    id_cuenta_operativa,
+    nombre_cuenta
+FROM cuentas_operativas
+WHERE
+    id_proyecto = {{ Number(DD_Proyecto_CO.selectedOptionValue) }}
+    AND activa = 1
+ORDER BY id_cuenta_operativa

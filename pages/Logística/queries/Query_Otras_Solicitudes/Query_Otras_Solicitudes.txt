@@ -1,0 +1,39 @@
+SELECT 
+    id_otras_solicitudes,
+    numero_otras_solicitudes,
+    nombre_proyecto,
+    razon_social,
+    codigo_iso,
+    monto,
+    fecha_solicitud,
+    referencia,
+    solicitud,
+    comentario,
+    fecha_enviado,
+
+    (
+        DATEDIFF(DAY, fecha_enviado, GETDATE())
+        - (DATEDIFF(WEEK, fecha_enviado, GETDATE()) * 2)
+        - CASE 
+            WHEN DATENAME(WEEKDAY, fecha_enviado) = 'Sunday' THEN 1
+            ELSE 0
+          END
+        - CASE 
+            WHEN DATENAME(WEEKDAY, GETDATE()) = 'Saturday' THEN 1
+            ELSE 0
+          END
+    ) AS dias_lab,
+
+    CASE 
+        WHEN completada = 1 THEN 'Si'
+        ELSE 'No'
+    END AS completada
+
+FROM otras_solicitudes
+
+WHERE 
+    id_proyecto = {{ Number(DD_Proyecto_Log.selectedOptionValue) }}
+
+    AND completada = 0
+
+ORDER BY fecha_solicitud DESC

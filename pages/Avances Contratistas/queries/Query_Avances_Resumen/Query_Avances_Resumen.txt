@@ -1,0 +1,28 @@
+SELECT 
+  id_suplidor,
+  razon_social,
+
+MAX(codigo_iso) AS codigo_iso,
+  SUM(total_estimado) AS total_estimado,
+  SUM(total_avanzado_historico) AS total_avanzado,
+  SUM(avance_disponible) AS avance_disponible,
+  SUM(total_facturado) AS total_facturado,
+  SUM(pendiente_facturar) AS pendiente_facturar,
+	SUM(estimado_menos_avanzado) AS estimado_menos_avanzado
+
+FROM vw_ordenes_en_avance
+
+WHERE 
+  id_proyecto = {{ Number(DD_Proyecto_Av.selectedOptionValue) }}
+
+  AND (
+    {{ DD_Moneda_Av.selectedOptionValue }} IS NULL
+    OR id_moneda = {{ Number(DD_Moneda_Av.selectedOptionValue) }}
+  )
+
+GROUP BY 
+  id_suplidor,
+  razon_social
+
+ORDER BY 
+  razon_social

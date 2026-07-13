@@ -1,0 +1,4 @@
+SELECT DISTINCT id_proyecto, nombre_proyecto
+FROM vw_resumen_adquirientes
+WHERE id_proyecto <> 5
+ORDER BY nombre_proyecto

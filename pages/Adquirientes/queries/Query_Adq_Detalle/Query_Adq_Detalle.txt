@@ -1,0 +1,4 @@
+SELECT *
+FROM vw_adq_pagos_activos
+WHERE id_unidad = {{ Number(DD_Unidad_Adq.selectedOptionValue) }}
+ORDER BY fecha_ingreso_adquiriente ASC

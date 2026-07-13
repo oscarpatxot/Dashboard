@@ -1,0 +1,5 @@
+SELECT *
+FROM vw_resumen_adquirientes
+WHERE id_proyecto = -- ahora
+{{ Number(DD_Proyecto_Adq.selectedOptionValue) }}
+ORDER BY orden_en_proyecto;

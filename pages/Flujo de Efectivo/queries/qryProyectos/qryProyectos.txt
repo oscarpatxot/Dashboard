@@ -1,0 +1,6 @@
+SELECT
+    id_proyecto,
+    nombre_proyecto
+FROM proyectos
+Where id_proyecto IN (2,1)
+ORDER BY nombre_proyecto

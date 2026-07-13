@@ -1,0 +1,15 @@
+SELECT *
+FROM vw_cuentas_por_pagar
+WHERE 
+  id_proyecto = {{ Number(Seleccionar_Proyecto.selectedOptionValue) }}
+
+  AND (
+    {{Seleccionar_Suplidor.selectedOptionValue}} IS NULL
+    OR id_suplidor = {{ Number(Seleccionar_Suplidor.selectedOptionValue) }}
+  )
+
+  AND (
+    {{Seleccionar_Moneda.selectedOptionValue}} IS NULL
+    OR id_moneda = {{ Number(Seleccionar_Moneda.selectedOptionValue) }}
+  )
+	ORDER BY dias_factura DESC

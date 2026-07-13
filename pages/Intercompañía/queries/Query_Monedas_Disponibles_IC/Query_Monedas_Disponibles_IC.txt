@@ -1,0 +1,8 @@
+SELECT DISTINCT
+    codigo_iso
+FROM vw_cuentas_por_pagar_intercompany
+
+WHERE
+    id_proyecto = {{ Number(DD_Proyecto_IC.selectedOptionValue) }}
+
+ORDER BY codigo_iso

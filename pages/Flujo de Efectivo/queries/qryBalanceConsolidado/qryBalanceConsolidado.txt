@@ -1,0 +1,3 @@
+EXEC sp_balance_consolidado_dashboard
+    @fecha_corte = '{{dpFechaFin.selectedDate}}',
+    @id_proyecto = {{selProyecto.selectedOptionValue}}

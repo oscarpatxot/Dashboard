@@ -1,0 +1,4 @@
+EXEC sp_top_movimientos_dashboard
+    @fecha_inicio = '{{dpFechaInicio.selectedDate}}',
+    @fecha_fin = '{{dpFechaFin.selectedDate}}',
+    @id_proyecto = {{selProyecto.selectedOptionValue}}

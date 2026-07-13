@@ -1,0 +1,19 @@
+SELECT 
+  SUM(
+    ISNULL([31_60],0) + 
+    ISNULL([61_90],0) + 
+    ISNULL([90_mas],0)
+  ) AS mas_30
+FROM vw_cuentas_por_pagar
+WHERE 
+  id_proyecto = {{ Number(Seleccionar_Proyecto.selectedOptionValue) }}
+
+  AND (
+    {{Seleccionar_Suplidor.selectedOptionValue}} IS NULL
+    OR id_suplidor = {{ Number(Seleccionar_Suplidor.selectedOptionValue) }}
+  )
+
+  AND (
+    {{Seleccionar_Moneda.selectedOptionValue}} IS NULL
+    OR id_moneda = {{ Number(Seleccionar_Moneda.selectedOptionValue) }}
+  )

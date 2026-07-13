@@ -1,0 +1,6 @@
+SELECT DISTINCT
+    id_proyecto,
+    nombre_proyecto
+FROM vw_cuentas_por_pagar_intercompany
+WHERE id_proyecto <> 5
+ORDER BY nombre_proyecto

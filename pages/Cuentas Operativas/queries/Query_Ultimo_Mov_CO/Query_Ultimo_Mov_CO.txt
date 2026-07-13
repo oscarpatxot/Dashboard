@@ -1,0 +1,4 @@
+SELECT 
+    MAX(fecha) AS ultima_fecha
+FROM movimientos_bancarios
+WHERE id_proyecto = {{ Number(DD_Proyecto_CO.selectedOptionValue) }}

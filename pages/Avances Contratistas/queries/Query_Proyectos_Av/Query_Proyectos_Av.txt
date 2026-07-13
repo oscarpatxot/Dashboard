@@ -1,0 +1,4 @@
+SELECT DISTINCT id_proyecto, nombre_proyecto
+FROM vw_ordenes_en_avance
+WHERE id_proyecto <> 5
+ORDER BY nombre_proyecto
