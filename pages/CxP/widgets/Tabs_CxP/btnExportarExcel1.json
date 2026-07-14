@@ -1,0 +1,54 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 16,
+  "boxShadow": "none",
+  "buttonColor": "green",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconAlign": "left",
+  "iconName": "export",
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "dyiwaxxtza",
+  "leftColumn": 45,
+  "minWidth": 120,
+  "mobileBottomRow": 16,
+  "mobileLeftColumn": 45,
+  "mobileRightColumn": 61,
+  "mobileTopRow": 12,
+  "needsErrorInfo": false,
+  "onClick": "{{\nJS_Exportar.exportarCSV(\n  Table2,\n  `${Seleccionar_Proyecto_Resumen.selectedOptionLabel} - ${Seleccionar_Moneda_Resumen.selectedOptionLabel}`\n)\n}}",
+  "parentColumnSpace": 19.62109375,
+  "parentId": "vd87qdaouw",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 59,
+  "text": "Exportar Excel",
+  "topRow": 12,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "chgawkmm9k",
+  "widgetName": "btnExportarExcel1"
+}

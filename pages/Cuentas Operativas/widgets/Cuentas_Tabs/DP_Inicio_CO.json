@@ -7,7 +7,7 @@
   "closeOnSelection": true,
   "dateFormat": "DD/MM/YYYY",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "{{ moment().subtract(7, 'days') }}",
+  "defaultDate": "{{ moment().subtract(30, 'days') }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
