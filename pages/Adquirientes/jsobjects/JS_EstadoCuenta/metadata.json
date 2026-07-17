@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69fb4c9985aa8f033655c0b5_a8cb6aa3-daac-408c-95a3-6bb3f082929b",
+  "id": "Adquirientes_JS_EstadoCuenta",
+  "unpublishedCollection": {
+    "name": "JS_EstadoCuenta",
+    "pageId": "Adquirientes",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
